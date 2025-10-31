@@ -1,0 +1,681 @@
+/* editarUsuario.css - ESTILO NEON CYBERPUNK MEJORADO 🚀🔮 */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Orbitron', 'Segoe UI', monospace;
+}
+
+body {
+    background: 
+        radial-gradient(circle at 10% 20%, rgba(0, 255, 255, 0.3) 0%, transparent 40%),
+        radial-gradient(circle at 90% 80%, rgba(255, 0, 255, 0.3) 0%, transparent 40%),
+        radial-gradient(circle at 50% 50%, rgba(0, 255, 128, 0.2) 0%, transparent 50%),
+        linear-gradient(135deg, #0a0a2a, #1a0033, #2a0044);
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    overflow-x: hidden;
+    position: relative;
+}
+
+/* Efecto de partículas digitales */
+body::before {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: 
+        repeating-linear-gradient(0deg, transparent, transparent 2px, rgba(0, 255, 255, 0.1) 2px, rgba(0, 255, 255, 0.1) 4px),
+        repeating-linear-gradient(90deg, transparent, transparent 2px, rgba(255, 0, 255, 0.1) 2px, rgba(255, 0, 255, 0.1) 4px);
+    animation: gridMove 20s linear infinite;
+    pointer-events: none;
+    z-index: -1;
+}
+
+@keyframes gridMove {
+    0% { transform: translate(0, 0); }
+    100% { transform: translate(20px, 20px); }
+}
+
+.dashboard {
+    width: 100%;
+    max-width: 500px;
+    margin: 0 auto;
+    position: relative;
+}
+
+/* Marco neón cyberpunk */
+.dashboard::before {
+    content: '';
+    position: absolute;
+    top: -12px;
+    left: -12px;
+    right: -12px;
+    bottom: -12px;
+    background: linear-gradient(45deg, 
+        #00ffff, #ff00ff, #00ff80, #ffff00, 
+        #00ffff, #ff00ff, #00ff80, #ffff00);
+    border-radius: 20px;
+    z-index: -1;
+    animation: neonBorder 2s linear infinite;
+    filter: blur(15px);
+    opacity: 0.8;
+    background-size: 400% 400%;
+}
+
+.dashboard::after {
+    content: '';
+    position: absolute;
+    top: -8px;
+    left: -8px;
+    right: -8px;
+    bottom: -8px;
+    border: 2px solid transparent;
+    border-radius: 18px;
+    background: linear-gradient(45deg, #00ffff, #ff00ff, #00ff80) border-box;
+    mask: linear-gradient(#fff 0 0) padding-box, linear-gradient(#fff 0 0);
+    mask-composite: exclude;
+    z-index: -1;
+    animation: neonGlow 3s ease-in-out infinite alternate;
+}
+
+@keyframes neonBorder {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+@keyframes neonGlow {
+    0% { opacity: 0.7; box-shadow: 0 0 20px #00ffff; }
+    33% { opacity: 0.8; box-shadow: 0 0 30px #ff00ff; }
+    66% { opacity: 0.9; box-shadow: 0 0 40px #00ff80; }
+    100% { opacity: 1; box-shadow: 0 0 50px #ffff00; }
+}
+
+.perfil-container {
+    background: rgba(10, 10, 20, 0.95);
+    backdrop-filter: blur(25px);
+    padding: 2.5rem;
+    border-radius: 15px;
+    border: 1px solid rgba(0, 255, 255, 0.3);
+    background-clip: padding-box;
+    box-shadow: 
+        inset 0 0 50px rgba(0, 255, 255, 0.1),
+        0 0 60px rgba(255, 0, 255, 0.3),
+        0 0 100px rgba(0, 255, 128, 0.2);
+    animation: 
+        containerHover 4s ease-in-out infinite alternate,
+        cyberPulse 6s infinite;
+    position: relative;
+    overflow: hidden;
+}
+
+@keyframes containerHover {
+    0% { transform: translateY(0px) rotateX(0deg); }
+    100% { transform: translateY(-8px) rotateX(2deg); }
+}
+
+@keyframes cyberPulse {
+    0%, 100% { 
+        box-shadow: 
+            inset 0 0 50px rgba(0, 255, 255, 0.1),
+            0 0 60px rgba(255, 0, 255, 0.3);
+    }
+    50% { 
+        box-shadow: 
+            inset 0 0 80px rgba(0, 255, 255, 0.2),
+            0 0 100px rgba(0, 255, 128, 0.4);
+    }
+}
+
+/* Efecto de scanlines */
+.perfil-container::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: repeating-linear-gradient(
+        0deg,
+        transparent,
+        transparent 2px,
+        rgba(0, 255, 255, 0.05) 2px,
+        rgba(0, 255, 255, 0.05) 4px
+    );
+    animation: scanline 8s linear infinite;
+    pointer-events: none;
+}
+
+@keyframes scanline {
+    0% { transform: translateY(-100%); }
+    100% { transform: translateY(100%); }
+}
+
+.perfil-container h2 {
+    color: transparent;
+    text-align: center;
+    margin-bottom: 2.5rem;
+    font-size: 2.4rem;
+    font-weight: 800;
+    background: linear-gradient(45deg, #00ffff, #ff00ff, #00ff80, #ffff00);
+    background-size: 300% 300%;
+    -webkit-background-clip: text;
+    background-clip: text;
+    animation: cyberText 3s ease-in-out infinite;
+    text-shadow: 
+        0 0 20px rgba(0, 255, 255, 0.5),
+        0 0 40px rgba(255, 0, 255, 0.3);
+    position: relative;
+    letter-spacing: 2px;
+}
+
+.perfil-container h2::before {
+    content: '⟡';
+    position: absolute;
+    left: -30px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #00ffff;
+    animation: spin 4s linear infinite;
+}
+
+.perfil-container h2::after {
+    content: '⟡';
+    position: absolute;
+    right: -30px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #ff00ff;
+    animation: spinReverse 3s linear infinite;
+}
+
+@keyframes cyberText {
+    0%, 100% { 
+        background-position: 0% 50%;
+        filter: hue-rotate(0deg);
+    }
+    50% { 
+        background-position: 100% 50%;
+        filter: hue-rotate(180deg);
+    }
+}
+
+@keyframes spin {
+    from { transform: translateY(-50%) rotate(0deg); }
+    to { transform: translateY(-50%) rotate(360deg); }
+}
+
+@keyframes spinReverse {
+    from { transform: translateY(-50%) rotate(360deg); }
+    to { transform: translateY(-50%) rotate(0deg); }
+}
+
+/* Sección de avatar cyberpunk */
+.avatar-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 2rem;
+    position: relative;
+}
+
+.avatar-container {
+    position: relative;
+    width: 160px;
+    height: 160px;
+    margin-bottom: 1.5rem;
+}
+
+.avatar-image {
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 3px solid transparent;
+    background: 
+        radial-gradient(circle at 30% 30%, #00ffff, transparent 50%),
+        radial-gradient(circle at 70% 70%, #ff00ff, transparent 50%),
+        linear-gradient(45deg, #00ffff, #ff00ff) padding-box;
+    box-shadow: 
+        0 0 40px rgba(0, 255, 255, 0.6),
+        inset 0 0 30px rgba(255, 0, 255, 0.4),
+        0 0 60px rgba(0, 255, 128, 0.3);
+    animation: avatarCyberGlow 4s infinite alternate;
+    transition: all 0.5s ease;
+    cursor: pointer;
+    filter: contrast(1.1) brightness(1.1);
+}
+
+.avatar-image:hover {
+    transform: scale(1.08) rotate(5deg);
+    box-shadow: 
+        0 0 60px rgba(0, 255, 255, 0.8),
+        inset 0 0 40px rgba(255, 0, 255, 0.6),
+        0 0 80px rgba(0, 255, 128, 0.5);
+    animation: avatarHoverPulse 0.8s ease-out;
+    filter: contrast(1.2) brightness(1.2) hue-rotate(45deg);
+}
+
+@keyframes avatarCyberGlow {
+    0% { 
+        box-shadow: 
+            0 0 40px rgba(0, 255, 255, 0.6),
+            inset 0 0 30px rgba(255, 0, 255, 0.4);
+    }
+    50% { 
+        box-shadow: 
+            0 0 50px rgba(255, 0, 255, 0.7),
+            inset 0 0 35px rgba(0, 255, 128, 0.5);
+    }
+    100% { 
+        box-shadow: 
+            0 0 60px rgba(0, 255, 128, 0.8),
+            inset 0 0 40px rgba(0, 255, 255, 0.6);
+    }
+}
+
+@keyframes avatarHoverPulse {
+    0% { transform: scale(1) rotate(0deg); }
+    50% { transform: scale(1.12) rotate(10deg); }
+    100% { transform: scale(1.08) rotate(5deg); }
+}
+
+.avatar-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(45deg, rgba(0, 255, 255, 0.9), rgba(255, 0, 255, 0.9));
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    transition: all 0.4s ease;
+    backdrop-filter: blur(10px);
+}
+
+.avatar-container:hover .avatar-overlay {
+    opacity: 1;
+}
+
+.avatar-overlay span {
+    color: #000;
+    font-weight: 700;
+    font-size: 0.9rem;
+    text-align: center;
+    padding: 15px;
+    background: rgba(255, 255, 255, 0.9);
+    border-radius: 10px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.avatar-info {
+    text-align: center;
+    color: #00ffff;
+    font-size: 0.9rem;
+    font-style: italic;
+    margin-top: 0.5rem;
+    animation: infoFlicker 3s infinite;
+    text-shadow: 0 0 10px rgba(0, 255, 255, 0.7);
+}
+
+@keyframes infoFlicker {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.7; }
+    75% { opacity: 0.9; }
+}
+
+/* Mensajes estilo terminal */
+.msg {
+    padding: 20px 24px;
+    border-radius: 12px;
+    margin-bottom: 2rem;
+    font-weight: 600;
+    text-align: center;
+    animation: terminalType 0.8s ease-out;
+    border: 1px solid;
+    position: relative;
+    overflow: hidden;
+    font-size: 1rem;
+    backdrop-filter: blur(15px);
+    font-family: 'Courier New', monospace;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+@keyframes terminalType {
+    0% { 
+        transform: scale(0.9) translateY(-10px); 
+        opacity: 0; 
+        clip-path: inset(0 100% 0 0);
+    }
+    100% { 
+        transform: scale(1) translateY(0); 
+        opacity: 1;
+        clip-path: inset(0 0 0 0);
+    }
+}
+
+.msg.error {
+    color: #ff4444;
+    background: linear-gradient(135deg, rgba(255, 0, 0, 0.1), rgba(255, 68, 68, 0.05));
+    border-color: #ff4444;
+    box-shadow: 
+        0 0 30px rgba(255, 68, 68, 0.4),
+        inset 0 0 20px rgba(255, 0, 0, 0.1);
+}
+
+.msg.success {
+    color: #00ff80;
+    background: linear-gradient(135deg, rgba(0, 255, 128, 0.1), rgba(0, 170, 68, 0.05));
+    border-color: #00ff80;
+    box-shadow: 
+        0 0 30px rgba(0, 255, 128, 0.4),
+        inset 0 0 20px rgba(0, 255, 128, 0.1);
+    animation: successPulse 2s infinite alternate;
+}
+
+@keyframes successPulse {
+    0% { 
+        box-shadow: 0 0 30px rgba(0, 255, 128, 0.4);
+        transform: scale(1);
+    }
+    100% { 
+        box-shadow: 0 0 50px rgba(0, 255, 128, 0.7);
+        transform: scale(1.02);
+    }
+}
+
+/* Formulario cyberpunk */
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 1.8rem;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+}
+
+label {
+    display: block;
+    margin-bottom: 12px;
+    font-weight: 700;
+    color: #00ffff;
+    font-size: 1rem;
+    text-shadow: 0 0 10px rgba(0, 255, 255, 0.7);
+    transition: all 0.3s ease;
+    position: relative;
+    padding-left: 15px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+label::before {
+    content: '▶';
+    position: absolute;
+    left: 0;
+    color: #ff00ff;
+    animation: blink 1s infinite;
+}
+
+label:hover {
+    color: #ff00ff;
+    transform: translateX(5px);
+    text-shadow: 0 0 15px rgba(255, 0, 255, 0.8);
+}
+
+@keyframes blink {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0; }
+}
+
+input[type="text"],
+input[type="email"],
+input[type="password"],
+input[type="file"],
+select {
+    width: 100%;
+    padding: 18px 20px;
+    border: 2px solid rgba(0, 255, 255, 0.3);
+    border-radius: 10px;
+    font-size: 15px;
+    background: rgba(0, 0, 0, 0.6);
+    color: #00ffff;
+    outline: none;
+    transition: all 0.4s ease;
+    box-shadow: 
+        inset 0 0 20px rgba(0, 255, 255, 0.1),
+        0 0 20px rgba(255, 0, 255, 0.2);
+    font-family: 'Courier New', monospace;
+    letter-spacing: 1px;
+}
+
+input[type="text"]:focus,
+input[type="email"]:focus,
+input[type="password"]:focus,
+input[type="file"]:focus,
+select:focus {
+    border-color: #ff00ff;
+    background: rgba(0, 0, 0, 0.8);
+    box-shadow: 
+        inset 0 0 30px rgba(255, 0, 255, 0.2),
+        0 0 40px rgba(0, 255, 255, 0.4);
+    transform: translateY(-3px);
+    color: #ff00ff;
+}
+
+/* Botones cyberpunk */
+.btn-container {
+    display: flex;
+    gap: 1.5rem;
+    margin-top: 2.5rem;
+}
+
+.btn {
+    flex: 1;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(45deg, #00ffff, #ff00ff);
+    color: #000;
+    padding: 18px 24px;
+    border: none;
+    border-radius: 12px;
+    text-decoration: none;
+    font-size: 16px;
+    font-weight: 800;
+    cursor: pointer;
+    transition: all 0.4s ease;
+    text-align: center;
+    box-shadow: 
+        0 0 30px rgba(0, 255, 255, 0.5),
+        0 0 60px rgba(255, 0, 255, 0.3);
+    position: relative;
+    overflow: hidden;
+    animation: btnCyberPulse 4s infinite alternate;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+@keyframes btnCyberPulse {
+    0% { 
+        transform: scale(1);
+        filter: hue-rotate(0deg);
+    }
+    100% { 
+        transform: scale(1.04);
+        filter: hue-rotate(90deg);
+    }
+}
+
+.btn::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: linear-gradient(45deg, 
+        transparent, rgba(255, 255, 255, 0.3), transparent);
+    transform: rotate(45deg);
+    animation: btnShine 3s infinite;
+}
+
+@keyframes btnShine {
+    0% { transform: rotate(45deg) translateX(-100%); }
+    100% { transform: rotate(45deg) translateX(100%); }
+}
+
+.btn:hover {
+    transform: scale(1.08);
+    box-shadow: 
+        0 0 50px rgba(0, 255, 255, 0.8),
+        0 0 80px rgba(255, 0, 255, 0.6),
+        0 0 120px rgba(0, 255, 128, 0.4);
+    animation: btnHover 0.6s ease-out;
+}
+
+@keyframes btnHover {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.12); }
+    100% { transform: scale(1.08); }
+}
+
+.btn:active {
+    transform: scale(0.95);
+    animation: cyberClick 0.3s ease-out;
+}
+
+@keyframes cyberClick {
+    0% { transform: scale(1); }
+    50% { transform: scale(0.9); }
+    100% { transform: scale(0.95); }
+}
+
+.btn-red {
+    background: linear-gradient(45deg, #ff0066, #ff4444);
+    box-shadow: 
+        0 0 30px rgba(255, 0, 102, 0.5),
+        0 0 60px rgba(255, 68, 68, 0.3);
+}
+
+.btn-red:hover {
+    box-shadow: 
+        0 0 50px rgba(255, 0, 102, 0.8),
+        0 0 80px rgba(255, 68, 68, 0.6);
+}
+
+/* Responsive cyberpunk */
+@media (max-width: 768px) {
+    body {
+        padding: 15px;
+        background: linear-gradient(135deg, #0a0a2a, #1a0033);
+    }
+    
+    .perfil-container {
+        padding: 2rem;
+    }
+    
+    .perfil-container h2 {
+        font-size: 2rem;
+    }
+    
+    .avatar-container {
+        width: 140px;
+        height: 140px;
+    }
+    
+    .btn-container {
+        flex-direction: column;
+    }
+    
+    .btn {
+        padding: 16px 20px;
+    }
+}
+
+@media (max-width: 480px) {
+    .perfil-container {
+        padding: 1.5rem;
+    }
+    
+    .perfil-container h2 {
+        font-size: 1.6rem;
+    }
+    
+    .avatar-container {
+        width: 120px;
+        height: 120px;
+    }
+    
+    input[type="text"],
+    input[type="email"],
+    input[type="password"],
+    input[type="file"],
+    select {
+        padding: 16px 18px;
+    }
+}
+
+/* Efecto de glitch al enviar */
+.form-submitting {
+    position: relative;
+    overflow: hidden;
+}
+
+.form-submitting::after {
+    content: 'SYSTEM_UPDATE_IN_PROGRESS...';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.2rem;
+    background: rgba(0, 0, 0, 0.9);
+    color: #00ff80;
+    animation: glitch 1.5s ease-out, terminalBlink 0.5s infinite;
+    border-radius: 15px;
+    backdrop-filter: blur(10px);
+    font-family: 'Courier New', monospace;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+}
+
+@keyframes glitch {
+    0% { 
+        transform: scale(0.8); 
+        opacity: 0; 
+        clip-path: inset(0 100% 0 0);
+    }
+    50% { 
+        transform: scale(1); 
+        opacity: 1;
+        clip-path: inset(0 0 0 0);
+    }
+    100% { 
+        transform: scale(1); 
+        opacity: 0;
+        clip-path: inset(0 0 0 0);
+    }
+}
+
+@keyframes terminalBlink {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.7; }
+}
