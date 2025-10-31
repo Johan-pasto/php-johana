@@ -21,21 +21,9 @@ create Table plato(
     disponible boolean,
     imagen blob
 );
-CREATE TABLE menu (
-    id_menu INT(5) AUTO_INCREMENT PRIMARY KEY,
-    nombre_plato VARCHAR(50) NOT NULL,
-    descripcion VARCHAR(255),
-    precio DECIMAL(6,2) NOT NULL,
-    disponible BOOLEAN DEFAULT TRUE,
-    imagen BLOB
-);
-ALTER TABLE menu DISCARD TABLESPACE;
+
 ALTER TABLE usuario ADD imagen BLOB NOT NULL;
-DROP TABLE restaurante.menu DISCARD TABLESPACE;
-DROP TABLE restaurante.menu DISCARD TABLESPACE;
-ALTER TABLE usuario ADD imagen BLOB;
-DROP TABLE IF EXISTS restaurante.menu;
-drop table if exists Menu;
-DROP TABLE IF EXISTS restaurante.menu;
+
+
 drop database restaurante;
 
